@@ -115,6 +115,19 @@ body {
   color: var(--accent);
 }
 
+.pdf-link {
+  margin-left: var(--sp-2);
+  background: var(--ink) !important;
+  border-color: var(--ink) !important;
+  color: #fff !important;
+}
+
+.pdf-link:hover {
+  background: var(--accent) !important;
+  border-color: var(--accent) !important;
+  color: #fff !important;
+}
+
 /* ---------- Sheet ---------- */
 
 .sheet {
@@ -128,9 +141,48 @@ body {
 /* ---------- Masthead ---------- */
 
 .masthead {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--sp-5);
+  align-items: center;
   border-bottom: 2px solid var(--ink);
   padding-bottom: var(--sp-3);
   margin-bottom: var(--sp-4);
+}
+
+/*
+ * Portret stoi w kodzie PO bloku z imieniem i kontaktem, a na prawo trafia
+ * dopiero przez siatke. Parsery ATS czytaja kolejnosc z dokumentu, wiec
+ * pierwsze, co widza, to imie i dane kontaktowe — nie obrazek, ktorego i tak
+ * nie odczytaja.
+ */
+.portrait {
+  width: 27mm;
+  height: 36mm;
+  object-fit: cover;
+  object-position: 50% 22%;
+  border-radius: 3px;
+  border: 1px solid var(--rule);
+  background: var(--ground);
+}
+
+@media (max-width: 560px) {
+  .masthead {
+    grid-template-columns: auto 1fr;
+    gap: var(--sp-4);
+  }
+
+  .portrait {
+    grid-row: 1;
+    grid-column: 1;
+    width: 22mm;
+    height: 29mm;
+  }
+
+  .masthead-text {
+    grid-row: 1;
+    grid-column: 2;
+  }
 }
 
 .masthead h1 {
@@ -426,9 +478,27 @@ a:focus-visible {
   .masthead h1 { font-size: 20pt; }
   .role { font-size: 9.5pt; margin-top: 2px; }
   .contact { font-size: 8pt; margin-top: var(--sp-2); gap: 1px var(--sp-3); }
-  .masthead { padding-bottom: var(--sp-2); margin-bottom: var(--sp-3); }
+  .masthead { padding-bottom: var(--sp-2); margin-bottom: var(--sp-3); gap: var(--sp-4); }
+  .portrait { width: 24mm; height: 32mm; }
 
-  h2 { font-size: 7.6pt; margin-bottom: var(--sp-2); }
+  /*
+   * Zero swiatla miedzy literami w druku.
+   *
+   * Przy `letter-spacing` Chromium zapisuje w warstwie tekstowej PDF-a kazda
+   * litere osobno — "WYKSZTALCENIE" wychodzi jako "W Y K S Z TA Ł C E N I E"
+   * i systemy ATS nie rozpoznaja naglowka sekcji. Na ekranie swiatlo zostaje.
+   */
+  h2 {
+    font-size: 7.6pt;
+    margin-bottom: var(--sp-2);
+    letter-spacing: normal;
+  }
+
+  .role,
+  .contact,
+  .stack h3 {
+    letter-spacing: normal;
+  }
   section { margin-bottom: var(--sp-3); }
   .entry { margin-bottom: var(--sp-2); }
   .entry h3 { font-size: 9pt; }

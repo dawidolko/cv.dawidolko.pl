@@ -9,6 +9,7 @@
 <link rel="alternate" hreflang="pl" href="https://cv.dawidolko.pl/">
 <link rel="alternate" hreflang="en" href="https://cv.dawidolko.pl/en/">
 <link rel="alternate" hreflang="x-default" href="https://cv.dawidolko.pl/">
+<meta name="author" content="Dawid Olko">
 <meta name="robots" content="index, follow">
 
 <meta property="og:type" content="profile">
@@ -29,16 +30,76 @@
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Dawid Olko",
+  "givenName": "Dawid",
+  "familyName": "Olko",
   "jobTitle": "Full-Stack Developer",
+  "description": "Full-stack developer working with Laravel, Django, React, Vue and Next.js, shipping with Docker and GitHub Actions.",
   "url": "https://dawidolko.pl",
+  "mainEntityOfPage": "https://cv.dawidolko.pl/en/",
+  "image": "https://cv.dawidolko.pl/assets/dawid-olko.jpg",
   "email": "mailto:dawid_olko@outlook.com",
   "sameAs": [
     "https://github.com/dawidolko",
-    "https://www.linkedin.com/in/dawidolko"
+    "https://www.linkedin.com/in/dawidolko",
+    "https://dawidolko.pl"
   ],
-  "address": { "@type": "PostalAddress", "addressLocality": "Rzeszów", "addressCountry": "PL" },
-  "alumniOf": { "@type": "CollegeOrUniversity", "name": "University of Rzeszów" },
-  "knowsLanguage": ["pl", "en"]
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Rzeszów",
+    "addressCountry": "PL"
+  },
+  "alumniOf": {
+    "@type": "CollegeOrUniversity",
+    "name": "University of Rzeszów",
+    "sameAs": "https://www.ur.edu.pl/"
+  },
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Ideo Software sp. z o.o.",
+    "url": "https://ideo.pl"
+  },
+  "knowsAbout": [
+    "PHP",
+    "Laravel",
+    "Python",
+    "Django",
+    "Node.js",
+    "JavaScript",
+    "TypeScript",
+    "React",
+    "Vue.js",
+    "Next.js",
+    "Nuxt",
+    "Tailwind CSS",
+    "SASS",
+    "PostgreSQL",
+    "MySQL",
+    "SQL",
+    "Docker",
+    "GitHub Actions",
+    "nginx",
+    "Linux",
+    "Git",
+    "REST API",
+    "WCAG 2.2",
+    "SEO"
+  ],
+  "knowsLanguage": [
+    {
+      "@type": "Language",
+      "name": "Polish",
+      "alternateName": "pl"
+    },
+    {
+      "@type": "Language",
+      "name": "English",
+      "alternateName": "en"
+    }
+  ],
+  "seeks": {
+    "@type": "Demand",
+    "name": "Full-stack developer roles"
+  }
 }
 </script>
 </head>
@@ -49,20 +110,26 @@
 <nav class="langbar" aria-label="Language version">
   <a href="../" lang="pl" hreflang="pl">PL</a>
   <span aria-current="true" lang="en">EN</span>
+  <a class="pdf-link" href="../Dawid_Olko_CV_EN.pdf" download
+     aria-label="Download the CV as a PDF (English version)">Download PDF</a>
 </nav>
 
 <main class="sheet" id="main-content">
 
   <header class="masthead">
-    <h1>Dawid Olko</h1>
-    <p class="role">Full-Stack Developer</p>
-    <ul class="contact">
-      <li><a href="mailto:dawid_olko@outlook.com">dawid_olko@outlook.com</a></li>
-      <li><a href="https://dawidolko.pl">dawidolko.pl</a></li>
-      <li><a href="https://www.linkedin.com/in/dawidolko">linkedin.com/in/dawidolko</a></li>
-      <li><a href="https://github.com/dawidolko">github.com/dawidolko</a></li>
-      <li>Rzeszów, Poland · remote or hybrid</li>
-    </ul>
+    <div class="masthead-text">
+      <h1>Dawid Olko</h1>
+      <p class="role">Full-Stack Developer</p>
+      <ul class="contact">
+        <li><a href="mailto:dawid_olko@outlook.com">dawid_olko@outlook.com</a></li>
+        <li><a href="https://dawidolko.pl">dawidolko.pl</a></li>
+        <li><a href="https://www.linkedin.com/in/dawidolko">linkedin.com/in/dawidolko</a></li>
+        <li><a href="https://github.com/dawidolko">github.com/dawidolko</a></li>
+        <li>Rzeszów, Poland · remote or hybrid</li>
+      </ul>
+    </div>
+    <img class="portrait" src="../assets/dawid-olko.jpg" alt="Dawid Olko"
+         width="450" height="600" fetchpriority="high" decoding="async">
   </header>
 
   <div class="columns">
@@ -186,7 +253,7 @@
         <h2 id="h-languages">Languages</h2>
         <ul class="plain">
           <li><strong>Polish</strong><span>native</span></li>
-          <li><strong>English</strong><span>B1 — technical documentation, written correspondence</span></li>
+          <li><strong>English</strong><span>B2 — technical documentation, written correspondence</span></li>
         </ul>
       </section>
     </aside>
@@ -201,11 +268,7 @@
           <h3><a href="https://smartrecommender.dawidolko.pl">SmartRecommender</a></h3>
           <span class="when">Django · React · PostgreSQL</span>
         </div>
-        <p>
-        Product recommendation platform with <strong>nine methods written from scratch</strong>,
-        plus an LLM layer (prompting, embeddings, RAG) and a benchmark harness behind my
-        master's thesis.
-      </p>
+        <p>Recommendation platform with <strong>nine methods written from scratch</strong>, plus an LLM layer (prompting, embeddings, RAG) and a benchmark harness behind my master's thesis.</p>
       </div>
 
       <div class="entry">
@@ -213,34 +276,40 @@
           <h3><a href="https://mp-industries.pl">MP Industries</a></h3>
           <span class="when">Laravel · Blade · Tailwind</span>
         </div>
-        <p>
-        Production site for a CNC machining company — machine catalogue, admin panel and CMS.
-        Deployed with Docker and GitHub Actions, including cleaning up a server security incident.
-      </p>
+        <p>Production site for a CNC company — machine catalogue, admin panel and CMS. Deployed with Docker and GitHub Actions, including cleaning up a server security incident.</p>
       </div>
 
       <div class="entry">
         <div class="entry-head">
-          <h3><a href="https://github.com/dawidolko/NeoBank-Platform-Nuxt">NeoBank</a></h3>
+          <h3><a href="https://neobank.dawidolko.pl">NeoBank</a></h3>
           <span class="when">Nuxt · TypeScript · Prisma</span>
         </div>
-        <p>
-        Banking platform on a real double-entry ledger: multi-currency accounts, transfers,
-        an audit trail and eight ledger invariants reconciled straight from SQL.
-      </p>
+        <p>Banking platform on a real double-entry ledger: multi-currency accounts, transfers, an audit trail and eight ledger invariants reconciled straight from SQL.</p>
       </div>
 
       <div class="entry">
         <div class="entry-head">
-          <h3><a href="https://ideo.dawidolko.pl">Ideo Recruit</a></h3>
-          <span class="when">Laravel 12 · MySQL · Redis</span>
+          <h3><a href="https://ithelpdesk.dawidolko.pl">IT Help Desk</a></h3>
+          <span class="when">ASP.NET Core · Vue 3 · MySQL</span>
         </div>
-        <p>
-        Recruitment application with a block-based CMS: bilingual content edited side by side,
-        user roles, page revision history and a candidate comparison tool.
-      </p>
+        <p>Ticketing system with role-based access for users, technicians and administrators — full ticket lifecycle, internal and public comments, reporting.</p>
       </div>
-  
+
+      <div class="entry">
+        <div class="entry-head">
+          <h3><a href="https://zbudujkompa.dawidolko.pl">ZbudujKompa</a></h3>
+          <span class="when">Next.js · TypeScript · Tailwind</span>
+        </div>
+        <p>Bilingual PC building guide with a configurator: component compatibility checks and a power supply calculator.</p>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <h3><a href="https://github.com/dawidolko/CinemaReserve-Project-Node-Angular">CinemaReserve</a></h3>
+          <span class="when">Angular · Node.js · MySQL</span>
+        </div>
+        <p>Cinema seat reservation — an interactive colour-coded seat map with VIP sections, screening schedules and an admin panel.</p>
+      </div>
     </div>
   </section>
 
