@@ -19,6 +19,13 @@
   --rule: #d9dfe5;
   --accent: #0f5f70;
   --accent-soft: #e6f0f2;
+  /*
+   * Osobna para pod przycisk PDF. Wczesniej tlo bralo `--ink`, a tekst byl
+   * na sztywno bialy — w trybie ciemnym `--ink` jest prawie bialy, wiec
+   * przycisk znikal i pojawial sie dopiero pod kursorem.
+   */
+  --btn-bg: #0f5f70;
+  --btn-fg: #ffffff;
 
   --sans: "IBM Plex Sans", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --serif: "Source Serif 4", Georgia, "Times New Roman", serif;
@@ -41,6 +48,8 @@
     --rule: #2c333c;
     --accent: #4fc3d4;
     --accent-soft: #17323a;
+    --btn-bg: #4fc3d4;
+    --btn-fg: #0b1016;
   }
 }
 
@@ -117,15 +126,13 @@ body {
 
 .pdf-link {
   margin-left: var(--sp-2);
-  background: var(--ink) !important;
-  border-color: var(--ink) !important;
-  color: #fff !important;
+  background: var(--btn-bg) !important;
+  border-color: var(--btn-bg) !important;
+  color: var(--btn-fg) !important;
 }
 
 .pdf-link:hover {
-  background: var(--accent) !important;
-  border-color: var(--accent) !important;
-  color: #fff !important;
+  filter: brightness(1.12);
 }
 
 /* ---------- Sheet ---------- */
