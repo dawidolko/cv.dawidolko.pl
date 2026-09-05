@@ -1,0 +1,508 @@
+/*
+ * Dawid Olko — CV stylesheet.
+ *
+ * One sheet drives both language versions and both media. The screen view is a
+ * centred A4-proportioned sheet on a tinted ground; the print view drops the
+ * ground, the language switch and the link chrome so the PDF comes out clean.
+ *
+ * Colours live in custom properties on :root and are redefined for dark mode.
+ * Print always resolves to the light set — a dark CV wastes toner and reads
+ * badly on paper.
+ */
+
+:root {
+  --paper: #ffffff;
+  --ground: #eef1f4;
+  --ink: #151a21;
+  --ink-soft: #414b57;
+  --ink-muted: #67717d;
+  --rule: #d9dfe5;
+  --accent: #0f5f70;
+  --accent-soft: #e6f0f2;
+
+  --sans: "IBM Plex Sans", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+
+  --sp-1: 0.25rem;
+  --sp-2: 0.5rem;
+  --sp-3: 0.75rem;
+  --sp-4: 1rem;
+  --sp-5: 1.5rem;
+  --sp-6: 2rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #171b21;
+    --ground: #0e1116;
+    --ink: #eef1f4;
+    --ink-soft: #c3ccd6;
+    --ink-muted: #98a3ae;
+    --rule: #2c333c;
+    --accent: #4fc3d4;
+    --accent-soft: #17323a;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: var(--sp-5) var(--sp-4);
+  background: var(--ground);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 10.5pt;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- Skip link ---------- */
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 10;
+  padding: var(--sp-2) var(--sp-4);
+  background: var(--accent);
+  color: #fff;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  left: var(--sp-4);
+  top: var(--sp-2);
+}
+
+/* ---------- Language switch ---------- */
+
+.langbar {
+  max-width: 210mm;
+  margin: 0 auto var(--sp-3);
+  display: flex;
+  gap: var(--sp-2);
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.langbar a,
+.langbar span {
+  padding: var(--sp-1) var(--sp-3);
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  font-size: 9pt;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--ink-soft);
+  background: var(--paper);
+}
+
+.langbar [aria-current="true"] {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.langbar a:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* ---------- Sheet ---------- */
+
+.sheet {
+  max-width: 210mm;
+  margin: 0 auto;
+  background: var(--paper);
+  padding: 14mm 14mm 12mm;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 8%), 0 8px 28px rgb(0 0 0 / 8%);
+}
+
+/* ---------- Masthead ---------- */
+
+.masthead {
+  border-bottom: 2px solid var(--ink);
+  padding-bottom: var(--sp-3);
+  margin-bottom: var(--sp-4);
+}
+
+.masthead h1 {
+  font-family: var(--serif);
+  font-size: 27pt;
+  line-height: 1.05;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  margin: 0;
+}
+
+.role {
+  margin: var(--sp-2) 0 0;
+  font-size: 11.5pt;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 0.01em;
+}
+
+.contact {
+  margin: var(--sp-3) 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-1) var(--sp-4);
+  font-size: 9.5pt;
+  color: var(--ink-soft);
+}
+
+.contact a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid var(--rule);
+}
+
+.contact a:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+/* ---------- Two-column body ---------- */
+
+.columns {
+  display: grid;
+  grid-template-columns: 1fr 62mm;
+  gap: var(--sp-6);
+  align-items: start;
+}
+
+@media (max-width: 700px) {
+  .columns {
+    grid-template-columns: 1fr;
+    gap: var(--sp-5);
+  }
+
+  .sheet {
+    padding: var(--sp-5) var(--sp-4);
+  }
+}
+
+section {
+  margin-bottom: var(--sp-5);
+}
+
+section:last-child {
+  margin-bottom: 0;
+}
+
+h2 {
+  font-size: 9pt;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 var(--sp-3);
+  padding-bottom: var(--sp-1);
+  border-bottom: 1px solid var(--rule);
+}
+
+/* ---------- Entries ---------- */
+
+.entry {
+  margin-bottom: var(--sp-4);
+  break-inside: avoid;
+}
+
+.entry:last-child {
+  margin-bottom: 0;
+}
+
+.entry-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--sp-3);
+}
+
+.entry h3 {
+  margin: 0;
+  font-size: 11pt;
+  font-weight: 650;
+  line-height: 1.3;
+}
+
+.entry h3 a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid var(--rule);
+}
+
+.entry h3 a:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+.when {
+  flex: none;
+  font-size: 9pt;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink-muted);
+  white-space: nowrap;
+}
+
+.where {
+  margin: 1px 0 var(--sp-2);
+  font-size: 9.5pt;
+  color: var(--ink-muted);
+}
+
+.entry p {
+  margin: 0 0 var(--sp-2);
+  color: var(--ink-soft);
+}
+
+.entry ul {
+  margin: 0;
+  padding-left: 1.05em;
+  color: var(--ink-soft);
+}
+
+.entry li {
+  margin-bottom: var(--sp-1);
+}
+
+.entry li::marker {
+  color: var(--accent);
+}
+
+/* ---------- Summary ---------- */
+
+.summary p {
+  margin: 0 0 var(--sp-2);
+  color: var(--ink-soft);
+  max-width: 62ch;
+}
+
+.summary p:last-child {
+  margin-bottom: 0;
+}
+
+/* ---------- Aside blocks ---------- */
+
+.stack {
+  margin: 0 0 var(--sp-3);
+}
+
+.stack:last-child {
+  margin-bottom: 0;
+}
+
+.stack h3 {
+  margin: 0 0 var(--sp-1);
+  font-size: 9pt;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.02em;
+}
+
+.stack p {
+  margin: 0;
+  font-size: 9.5pt;
+  color: var(--ink-soft);
+}
+
+.chips {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-1);
+}
+
+.chips li {
+  padding: 1px var(--sp-2);
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  background: var(--accent-soft);
+  font-size: 8.5pt;
+  color: var(--ink-soft);
+}
+
+.plain {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 9.5pt;
+  color: var(--ink-soft);
+}
+
+.plain li {
+  margin-bottom: var(--sp-2);
+}
+
+.plain li:last-child {
+  margin-bottom: 0;
+}
+
+.plain strong {
+  display: block;
+  color: var(--ink);
+  font-weight: 650;
+}
+
+.plain span {
+  color: var(--ink-muted);
+  font-size: 9pt;
+}
+
+/* ---------- Clause ---------- */
+
+.clause {
+  margin: var(--sp-5) 0 0;
+  padding-top: var(--sp-3);
+  border-top: 1px solid var(--rule);
+  font-size: 7.5pt;
+  line-height: 1.45;
+  color: var(--ink-muted);
+}
+
+/* ---------- Focus ---------- */
+
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* ---------- Print ---------- */
+
+@page {
+  size: A4;
+  margin: 11mm 12mm;
+}
+
+@media print {
+  /*
+   * Print resolves to the light palette regardless of the viewer's system
+   * setting — a dark CV wastes toner and is unreadable on paper.
+   */
+  :root {
+    --paper: #ffffff;
+    --ground: #ffffff;
+    --ink: #000000;
+    --ink-soft: #23282f;
+    --ink-muted: #4b545e;
+    --rule: #b9c2cb;
+    --accent: #0b4c5a;
+    --accent-soft: #ffffff;
+  }
+
+  /*
+   * Cel: jedna strona A4. Skala typografii i odstepow schodzi ponizej wartosci
+   * ekranowych, ale nie ponizej progu czytelnosci w druku (~8pt dla tekstu
+   * ciaglego). Wszystko jest wyprowadzone z tych kilku zmiennych, wiec dalsze
+   * dociskanie sprowadza sie do zmiany liczb tutaj.
+   */
+  body {
+    padding: 0;
+    background: #fff;
+    font-size: 8.4pt;
+    line-height: 1.38;
+  }
+
+  .masthead h1 { font-size: 20pt; }
+  .role { font-size: 9.5pt; margin-top: 2px; }
+  .contact { font-size: 8pt; margin-top: var(--sp-2); gap: 1px var(--sp-3); }
+  .masthead { padding-bottom: var(--sp-2); margin-bottom: var(--sp-3); }
+
+  h2 { font-size: 7.6pt; margin-bottom: var(--sp-2); }
+  section { margin-bottom: var(--sp-3); }
+  .entry { margin-bottom: var(--sp-2); }
+  .entry h3 { font-size: 9pt; }
+  .entry p { margin-bottom: var(--sp-1); }
+  .where { font-size: 8pt; margin-bottom: 2px; }
+  .when { font-size: 7.8pt; }
+
+  .stack { margin-bottom: var(--sp-2); }
+  .stack h3 { font-size: 7.8pt; }
+  .stack p, .plain { font-size: 8pt; }
+  .chips li { font-size: 7.4pt; padding: 0 4px; }
+  .plain li { margin-bottom: var(--sp-1); }
+  .plain span { font-size: 7.8pt; }
+
+  .projects { margin-top: var(--sp-3); }
+  .projects .entry-list { gap: var(--sp-2) var(--sp-5); }
+
+  .clause {
+    margin-top: var(--sp-3);
+    padding-top: var(--sp-2);
+    font-size: 6.4pt;
+    line-height: 1.35;
+  }
+
+  .langbar,
+  .skip-link {
+    display: none !important;
+  }
+
+  .sheet {
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+  }
+
+  .columns {
+    gap: var(--sp-5);
+  }
+
+  section,
+  .entry {
+    break-inside: avoid;
+  }
+
+  h2 {
+    break-after: avoid;
+  }
+
+  a {
+    border-bottom: none !important;
+  }
+}
+
+/* ---------- Projects, full width ---------- */
+
+/*
+ * The project list sits below the two columns rather than inside the left one.
+ * In the column layout the sidebar ran out of content long before the main
+ * column did, which left a tall empty gutter on screen and a half-empty second
+ * page in the PDF. Full width across two tracks fills both.
+ */
+.projects {
+  margin-top: var(--sp-5);
+}
+
+.projects .entry-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-4) var(--sp-6);
+}
+
+@media (max-width: 700px) {
+  .projects .entry-list {
+    grid-template-columns: 1fr;
+  }
+}
