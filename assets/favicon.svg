@@ -1,6 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Dawid Olko — CV">
   <rect width="64" height="64" rx="14" fill="#0f5f70"/>
-  <!-- arkusz CV ze zgietym rogiem -->
+  <!--
+    CV sheet with a folded corner
+  -->
   <path d="M20 14 h16 l10 10 v26 a2 2 0 0 1-2 2 H20 a2 2 0 0 1-2-2 V16 a2 2 0 0 1 2-2 z"
         fill="#ffffff"/>
   <path d="M36 14 l10 10 h-8 a2 2 0 0 1-2-2 z" fill="#bcd9de"/>

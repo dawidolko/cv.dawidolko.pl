@@ -157,10 +157,10 @@ body {
 }
 
 /*
- * Portret stoi w kodzie PO bloku z imieniem i kontaktem, a na prawo trafia
- * dopiero przez siatke. Parsery ATS czytaja kolejnosc z dokumentu, wiec
- * pierwsze, co widza, to imie i dane kontaktowe — nie obrazek, ktorego i tak
- * nie odczytaja.
+ * The portrait comes AFTER the name and contact block in the source and only
+ * moves to the right through the grid. ATS parsers read the document order, so
+ * the first thing they see is the name and contact details - not an image they
+ * could not read anyway.
  */
 .portrait {
   width: 27mm;
