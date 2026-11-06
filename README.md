@@ -1,3 +1,7 @@
+<p align="center">
+  <a href="https://cv.dawidolko.pl/"><img src="docs/readme/banner.webp" alt="CV: personal site. The page is the source, the PDF is the export" width="100%"></a>
+</p>
+
 # CV
 
 > 📄 **The page is the source, the PDF is the export** — a two-language CV as two static files, printed from the same stylesheet
@@ -17,6 +21,8 @@ There is no build step and no JavaScript — two HTML files and one stylesheet, 
 | :------ | :------------------------------------------------- |
 | Polish  | [cv.dawidolko.pl](https://cv.dawidolko.pl/)         |
 | English | [cv.dawidolko.pl/en](https://cv.dawidolko.pl/en/)   |
+
+**[Live site](https://cv.dawidolko.pl/)** · [Screenshots](#️-screenshots) · [Features](#-key-features)
 
 ---
 
@@ -39,6 +45,12 @@ Serve the directory and print both pages to A4 with backgrounds enabled:
 python3 -m http.server 8080
 # then in the browser: Print → Save as PDF → A4, margins 11 mm / 12 mm
 ```
+
+---
+
+## ♿ Accessibility
+
+An accessibility panel in the corner of every page changes text size, contrast, font and motion, and remembers the choice on the device. It sits on top of the markup and does not replace accessible markup.
 
 ---
 
@@ -65,6 +77,23 @@ GitHub Pages, served from `main`. `CNAME` holds the custom domain; on the DNS si
 
 ---
 
+## 🖼️ Screenshots
+
+<p align="center">
+  <img src="docs/readme/desktop.webp" alt="CV on a desktop screen" width="74%">
+  <img src="docs/readme/mobile.webp" alt="CV on a phone" width="22%">
+</p>
+
+---
+
 ## 📄 License
 
 MIT © [Dawid Olko](https://dawidolko.pl)
+
+---
+
+## 👨‍💻 Author
+
+**Dawid Olko** · Fullstack / AI Developer
+
+[Portfolio](https://olkodawid.dawidolko.pl) · [CV](https://cv.dawidolko.pl) · [LinkedIn](https://www.linkedin.com/in/dawidolko/) · [GitHub](https://github.com/dawidolko)
