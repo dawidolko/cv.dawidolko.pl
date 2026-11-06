@@ -1,0 +1,16 @@
+# Dawid Olko: CV
+
+> CV of Dawid Olko, a fullstack / AI developer from Rzeszów, Poland, and co-creator of Skribly. Available as a page and as a PDF in Polish and English.
+
+## CV
+
+- [CV in Polish](https://cv.dawidolko.pl/): Experience, skills, education and selected projects.
+- [CV in English](https://cv.dawidolko.pl/en/): The same CV in English.
+- [PDF in Polish](https://cv.dawidolko.pl/Dawid_Olko_CV_PL.pdf): One A4 page for printing.
+- [PDF in English](https://cv.dawidolko.pl/Dawid_Olko_CV_EN.pdf): One A4 page for printing.
+
+## Links
+
+- [Website](https://dawidolko.pl/): Personal site with projects, studies and contact.
+- [GitHub](https://github.com/dawidolko): Source code of public projects.
+- [Skribly](https://skribly.pl/): Non-commercial tools for building software with AI agents.

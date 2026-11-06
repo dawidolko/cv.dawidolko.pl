@@ -20,9 +20,8 @@
   --accent: #0f5f70;
   --accent-soft: #e6f0f2;
   /*
-   * Osobna para pod przycisk PDF. Wczesniej tlo bralo `--ink`, a tekst byl
-   * na sztywno bialy — w trybie ciemnym `--ink` jest prawie bialy, wiec
-   * przycisk znikal i pojawial sie dopiero pod kursorem.
+   * A separate pair for the PDF button. With `--ink` as background and fixed
+   * white text, the button disappeared in dark mode.
    */
   --btn-bg: #0f5f70;
   --btn-fg: #ffffff;
@@ -116,7 +115,7 @@ body {
 .langbar [aria-current="true"] {
   background: var(--accent);
   border-color: var(--accent);
-  color: #fff;
+  color: var(--paper);
 }
 
 .langbar a:hover {
@@ -470,10 +469,9 @@ a:focus-visible {
   }
 
   /*
-   * Cel: jedna strona A4. Skala typografii i odstepow schodzi ponizej wartosci
-   * ekranowych, ale nie ponizej progu czytelnosci w druku (~8pt dla tekstu
-   * ciaglego). Wszystko jest wyprowadzone z tych kilku zmiennych, wiec dalsze
-   * dociskanie sprowadza sie do zmiany liczb tutaj.
+   * Goal: one A4 page. Type and spacing go below the screen values, but not
+   * below the print reading limit of about 8pt for body text. Everything comes
+   * from these few variables, so further tightening means changing them here.
    */
   body {
     padding: 0;
@@ -489,11 +487,10 @@ a:focus-visible {
   .portrait { width: 24mm; height: 32mm; }
 
   /*
-   * Zero swiatla miedzy literami w druku.
+   * No letter spacing in print.
    *
-   * Przy `letter-spacing` Chromium zapisuje w warstwie tekstowej PDF-a kazda
-   * litere osobno — "WYKSZTALCENIE" wychodzi jako "W Y K S Z TA Ł C E N I E"
-   * i systemy ATS nie rozpoznaja naglowka sekcji. Na ekranie swiatlo zostaje.
+   * With `letter-spacing`, Chromium writes each letter separately in the PDF
+   * text layer, so ATS systems do not recognise section headings.
    */
   h2 {
     font-size: 7.6pt;
