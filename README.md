@@ -31,7 +31,7 @@ There is no build step — two HTML files and one stylesheet, served by GitHub P
 - **One layout, two languages** — both pages share `assets/cv.css`, so a change to the design lands on both at once and neither can quietly fall behind.
 - **The print output is the deliverable** — the print stylesheet is written for A4 with 11 mm / 12 mm margins, so what the browser saves matches the PDFs in this repository.
 - **Light palette forced when printing** — regardless of the viewer's system theme. A dark CV wastes toner and reads badly on paper.
-- **No JavaScript at all** — nothing to load, nothing to fail, and the page prints identically with scripting disabled.
+- **Works without JavaScript** — the two small scripts (reader panel, embed mode) are extras: the page reads and prints identically with scripting disabled.
 - **Accessible by construction** — one `<h1>` per page, a skip link, landmark elements, `:focus-visible` rings and contrast that clears WCAG 2.2 AA in both themes.
 - **Correct multilingual SEO** — each language has its own canonical URL, an `hreflang` pair and a `Person` JSON-LD block, so search engines index the right version for the right reader.
 
