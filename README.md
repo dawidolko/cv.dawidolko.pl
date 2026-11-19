@@ -8,7 +8,7 @@
 
 **CV** is my curriculum vitae as a website, in Polish and English. The page is the original; the PDFs in this repository are printed from it. One layout means the two versions cannot drift apart, and the print stylesheet is tuned so the browser's own *Save as PDF* produces exactly the single A4 sheet that is checked in.
 
-There is no build step and no JavaScript — two HTML files and one stylesheet, served by GitHub Pages.
+There is no build step and no JavaScript on the page — two HTML files and one stylesheet, served by GitHub Pages, plus a small static API under `api/` that other sites read the CV from.
 
 ![HTML5](https://img.shields.io/badge/HTML5-two%20pages-E34F26?logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-screen%20%2B%20print-1572B6?logo=css3&logoColor=white)
@@ -46,6 +46,28 @@ python3 -m http.server 8080
 # then in the browser: Print → Save as PDF → A4, margins 11 mm / 12 mm
 ```
 
+Then refresh the API, so every site that shows the CV picks up the new version:
+
+```bash
+node tools/api.mjs          # previews and api/cv.json (needs poppler and cwebp: brew install poppler webp)
+node tools/api.mjs --check  # the same check CI runs
+```
+
+---
+
+## 🔌 API
+
+Other sites read the CV from here instead of keeping their own copy; olkodawid.dawidolko.pl shows it on its resume page.
+Every file is static and served with `Access-Control-Allow-Origin: *`.
+
+| Address | What it is |
+| --- | --- |
+| `https://cv.dawidolko.pl/api/cv.json` | name, title, export date, preview size, and per language (`pl`, `en`) the PDF, the page, the previews and the PDF's SHA-256 |
+| `https://cv.dawidolko.pl/api/preview/<pl\|en>-<714\|1012\|2024>.webp` | the first page of the PDF as a picture, three widths |
+| `https://cv.dawidolko.pl/Dawid_Olko_CV_<PL\|EN>.pdf` | the PDFs |
+
+The addresses are stable: a new CV replaces the files under the same names.
+
 ---
 
 ## ♿ Accessibility
@@ -66,6 +88,8 @@ cv.dawidolko.pl/
 │   └── favicon.svg
 ├── Dawid_Olko_CV_PL.pdf    # printed from index.html
 ├── Dawid_Olko_CV_EN.pdf    # printed from en/index.html
+├── api/                    # cv.json and the previews, written by tools/api.mjs
+├── tools/api.mjs           # writes api/ from the PDFs
 └── CNAME                   # the custom domain
 ```
 

@@ -1,0 +1,31 @@
+{
+  "name": "Dawid Olko",
+  "title": "Fullstack / AI Developer",
+  "updated": "2026-11-19",
+  "previewSize": {
+    "width": 1012,
+    "height": 1433
+  },
+  "languages": {
+    "pl": {
+      "pdf": "https://cv.dawidolko.pl/Dawid_Olko_CV_PL.pdf",
+      "page": "https://cv.dawidolko.pl/",
+      "preview": {
+        "714": "https://cv.dawidolko.pl/api/preview/pl-714.webp",
+        "1012": "https://cv.dawidolko.pl/api/preview/pl-1012.webp",
+        "2024": "https://cv.dawidolko.pl/api/preview/pl-2024.webp"
+      },
+      "sha256": "1208b5830f957a5483510c9c7ff5b7120c904809e4001e541c8efd5add66ff5e"
+    },
+    "en": {
+      "pdf": "https://cv.dawidolko.pl/Dawid_Olko_CV_EN.pdf",
+      "page": "https://cv.dawidolko.pl/en/",
+      "preview": {
+        "714": "https://cv.dawidolko.pl/api/preview/en-714.webp",
+        "1012": "https://cv.dawidolko.pl/api/preview/en-1012.webp",
+        "2024": "https://cv.dawidolko.pl/api/preview/en-2024.webp"
+      },
+      "sha256": "024141cd5905899f1991b783113a232dfbd776d7f904cf734b3c88c3c236f9ff"
+    }
+  }
+}
