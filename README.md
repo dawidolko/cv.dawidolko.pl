@@ -8,7 +8,7 @@
 
 **CV** is my curriculum vitae as a website, in Polish and English. The page is the original; the PDFs in this repository are printed from it. One layout means the two versions cannot drift apart, and the print stylesheet is tuned so the browser's own *Save as PDF* produces exactly the single A4 sheet that is checked in.
 
-There is no build step and no JavaScript on the page — two HTML files and one stylesheet, served by GitHub Pages, plus a small static API under `api/` that other sites read the CV from.
+There is no build step — two HTML files and one stylesheet, served by GitHub Pages, plus a small static API under `api/` that other sites read the CV from. The only scripts are the reader panel and `assets/embed.js`, which lets another site show the page in a frame (it hides the page chrome and reports the height); the CV reads the same without them.
 
 ![HTML5](https://img.shields.io/badge/HTML5-two%20pages-E34F26?logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-screen%20%2B%20print-1572B6?logo=css3&logoColor=white)

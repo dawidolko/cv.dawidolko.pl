@@ -580,3 +580,21 @@ a:focus-visible {
     grid-template-columns: 1fr;
   }
 }
+
+/* ---------- Embed mode (assets/embed.js, inside another site's frame) ---------- */
+
+.embed body {
+  padding: 0;
+  background: transparent;
+}
+
+.embed .langbar,
+.embed .skip-link,
+.embed .a11yp__toggle,
+.embed .a11yp__panel {
+  display: none !important;
+}
+
+.embed .sheet {
+  box-shadow: none;
+}
